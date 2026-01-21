@@ -19,7 +19,7 @@ Cons:
 Complexity Analysis:
 - Time: Expected O(N + (B + M) log A).
 - Space: O(A).
-  Variables: 
+  Where:
     - A: Maximum sequence length at any given time (500,000).
     - B: Total insertions across a single test case (4,000,000).
     - N: Length of initial sequence.
@@ -130,7 +130,7 @@ void del_all(int p) {
 /* HOW TO USE
 1 - The arrays represent a forest (collection of trees). Treat every tree in this forest 
     as a dynamic array represented by a root index.
-2 - Use dec(x) to obtain an index representing a dynamic array with a single element of value x.
+2 - Use dec(x) to obtain an index representing a new dynamic array with a single element of value x.
 3 - Use del_all(p) to completely delete the dynamic array represented by root p.
 4 - Lazy propagation:
         - Use revv(p) to reverse the order of the dynamic array represented by root p.
