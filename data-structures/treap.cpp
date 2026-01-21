@@ -1,11 +1,10 @@
-/* Treap (Tree + Heap)
+/* TREAP (Tree + Heap)
 A versatile data structure that combines Tree (specifically, BST) properties and Heap properties
 to ensure an expected height of O(log N).
 
 Implementation:
-- This is a solution code for "P2 - Maintaining a Sequence" (NOI China 2005).
 - The Treap variant used in this code is an Implicit Treap.
-- I am capable of using pointers, but I used primitive arrays because they are much faster,
+- I am capable of using pointers, but I prefer using primitive arrays because they are much faster, 
   with index 0 corresponding to a null pointer.
 
 Pros:
@@ -13,19 +12,25 @@ Pros:
 - Supports dynamic array operations (Insert, Delete, Move, etc.) which Segment Trees can't do.
 
 Cons:
-- While the time complexity is O(log N) per operation, Treaps usually have a larger
-  constant factor in their execution time compared to Segment Trees.
+- While the expected time complexity is O(log N) per operation, Treaps usually have a larger 
+  constant factor in their execution time compared to Segment Trees, making them generally 
+  slower in practice.
 
 Complexity Analysis:
 - Time: Expected O(N + (B + M) log A).
 - Space: O(A).
-  Note: 
+  Variables: 
     - A: Maximum sequence length at any given time (500,000).
     - B: Total insertions across a single test case (4,000,000).
     - N: Length of initial sequence.
-    - M: Number of operations/queries.
+    - M: Number of queries.
     - The node-recycling pool "del" ensures space complexity stays O(A) 
       regardless of the total number of insertions (B).
+
+Note:
+- Unfortunately, I didn't develop a struct for this code because the problem I'm trying 
+  to solve has a strict time limit (0.6 seconds). My testing showed that using 
+  a struct causes TLE, so I used global arrays to make the code faster.
 */
 
 #include<bits/stdc++.h>
@@ -43,6 +48,8 @@ Complexity Analysis:
 #define ts to_string
 #define all(x) (x).begin(), (x).end()
 #define sz(x) (int)(x).size()
+#define MIN(x) *min_element(all(x))
+#define MAX(x) *max_element(all(x))
 #define lb lower_bound
 #define ub upper_bound
 #pragma GCC optimize("O3", "unroll-loops")
@@ -119,6 +126,27 @@ void del_all(int p) {
     del_all(l[p]);
     del_all(r[p]);
 }
+
+/* HOW TO USE
+1 - The arrays represent a forest (collection of trees). Treat every tree in this forest 
+    as a dynamic array represented by a root index.
+2 - Use dec(x) to obtain an index representing a dynamic array with a single element of value x.
+3 - Use del_all(p) to completely delete the dynamic array represented by root p.
+4 - Lazy propagation:
+        - Use revv(p) to reverse the order of the dynamic array represented by root p.
+        - Use all_same(p, x) to assign the value x to every element in the dynamic array
+          represented by root p.
+5 - Manipulation:
+        - Use split(p, lef, rig, x) to split the dynamic array represented by root p into two 
+          dynamic arrays, with the left side containing x elements and its root assigned to lef, 
+          and the right side containing the remaining elements with its root assigned to rig.
+        - Use merge(p, lef, rig) to merge two dynamic arrays represented by roots lef and
+          rig into a single dynamic array with its root assigned to p.
+
+Example usage:
+- The code below solves the problem "P2 - Maintaining a Sequence" (NOI China 2005).
+- Problem source: https://dmoj.ca/problem/noi05p2
+*/
 
 int32_t main() {
     ios_base::sync_with_stdio(false); cin.tie(NULL);
