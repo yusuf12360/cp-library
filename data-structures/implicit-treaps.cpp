@@ -6,6 +6,9 @@ Implementation:
 - The Treap variant used in this code is an Implicit Treap.
 - I am capable of using pointers, but I prefer using primitive arrays because they are much faster, 
   with index 0 corresponding to a null pointer.
+- Unfortunately, I didn't develop a struct for this code because the problem I'm trying 
+  to solve has a strict time limit (0.6 seconds). My testing showed that using 
+  a struct causes TLE, so I used global arrays to make the code faster.
 
 Pros:
 - Supports all standard Segment Tree operations (Range Query, Range Update, etc.).
@@ -26,11 +29,6 @@ Complexity Analysis:
     - M: Number of queries.
     - The node-recycling pool "del" ensures space complexity stays O(A) 
       regardless of the total number of insertions (B).
-
-Note:
-- Unfortunately, I didn't develop a struct for this code because the problem I'm trying 
-  to solve has a strict time limit (0.6 seconds). My testing showed that using 
-  a struct causes TLE, so I used global arrays to make the code faster.
 */
 
 #include<bits/stdc++.h>
