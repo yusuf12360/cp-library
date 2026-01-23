@@ -40,3 +40,6 @@ sol
 
 # debug information files
 *.dwo
+
+# Extensions
+*.cph
