@@ -8,7 +8,8 @@ This repository contains my personal collection of algorithms and data structure
 - **Editor:** VS Code
 
 ## Coming Soon
-- MCBM
-- Trie
+- Mo's Algorithm
+- DP DnC
 - Segtree
+- Trie
 - others

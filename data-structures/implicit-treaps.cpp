@@ -27,8 +27,8 @@ Complexity Analysis:
     - B: Total insertions across a single test case (4,000,000).
     - N: Length of initial sequence.
     - M: Number of queries.
-    - The node-recycling pool "del" ensures space complexity stays O(A) 
-      regardless of the total number of insertions (B).
+- Note: The node-recycling pool "del" ensures space complexity stays O(A) regardless of 
+  the total number of insertions (B).
 */
 
 #include<bits/stdc++.h>
@@ -128,17 +128,14 @@ void del_all(int p) {
 /* HOW TO USE
 1 - The arrays represent a forest (collection of trees). Treat every tree in this forest 
     as a dynamic array represented by a root index.
-2 - Use dec(x) to obtain an index representing a new dynamic array with a single element of value x.
-3 - Use del_all(p) to completely delete the dynamic array represented by root p.
-4 - Lazy propagation:
-        - Use revv(p) to reverse the order of the dynamic array represented by root p.
-        - Use all_same(p, x) to assign the value x to every element in the dynamic array
-          represented by root p.
-5 - Manipulation:
-        - Use split(p, lef, rig, x) to split the dynamic array represented by root p into two 
-          dynamic arrays, with the left side containing x elements and its root assigned to lef, 
-          and the right side containing the remaining elements with its root assigned to rig.
-        - Use merge(p, lef, rig) to merge two dynamic arrays represented by roots lef and
+2 - dec(x): Obtain an index representing a new dynamic array with a single element of value x.
+3 - del_all(p): Completely delete the dynamic array represented by root p.
+4 - revv(p): Reverse the order of the dynamic array represented by root p.
+5 - all_same(p, x): Assign the value x to every element in the dynamic array represented by root p.
+6 - Use split(p, lef, rig, x): Split the dynamic array represented by root p into two dynamic arrays, 
+    with the left side containing x elements and its root assigned to lef, and the right side containing 
+    the remaining elements with its root assigned to rig.
+7 - merge(p, lef, rig): Merge two dynamic arrays represented by roots lef and
           rig into a single dynamic array with its root assigned to p.
 
 Example usage:
