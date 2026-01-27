@@ -19,7 +19,7 @@ Complexity Analysis:
   Where:
     - V: Number of vertices.
     - E: Number of edges.
-- Note: The formal proof of the O(E sqrt(V)) time complexity and the brief algorithm workflow
+- Note: The formal proof of the O(E sqrt(V)) time complexity and a brief overview of the algorithm
         are available here: https://github.com/yusuf12360/complexity-analysis/blob/main/graphs/hopcroft-karp.md
 */
 
