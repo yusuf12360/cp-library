@@ -1,4 +1,4 @@
-/* TREAP (Tree + Heap)
+/* Treap (Tree + Heap)
 A versatile data structure that combines Tree (specifically, BST) properties and Heap properties
 to ensure an expected height of O(log N).
 
