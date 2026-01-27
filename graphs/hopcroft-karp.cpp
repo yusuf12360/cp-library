@@ -122,7 +122,7 @@ struct HopcroftKarp {
 /* HOW TO USE
 1 - Bipartite graph is a graph where vertices can be divided into two disjoint sets (U and V)
     such that every edge connects a vertex in U to one in V.
-2 - setup(n, m): Initialize with n nodes on the left and m nodes on the right.
+2 - setup(n, m): Initialize a bipartite graph with n nodes on the left and m nodes on the right.
 3 - add_edge(u, v): Add an edge from node u on the left to node v on the right.
 4 - mcbm(): Returns the maximum matching size for the bipartite graph.
 
