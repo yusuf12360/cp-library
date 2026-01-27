@@ -4,7 +4,7 @@ It augments along a maximal set of shortest augmenting paths in each phase to en
 
 Implementation:
 - I developed a struct to ensure ease of integration.
-- Utilizes 1-based indexing and a dummy node (index 0) strategy to simplify things when searching for 
+- Utilizes 1-based indexing and a dummy node (index 0) strategy to simplify things when searching for
   an augmenting path.
 
 Pros:
@@ -19,8 +19,8 @@ Complexity Analysis:
   Where:
     - V: Number of vertices.
     - E: Number of edges.
-- Note: The formal proof of the O(E sqrt(V)) time complexity will be later discussed in my 
-        'complexity-analysis' repository.
+- Note: The formal proof of the O(E sqrt(V)) time complexity and the brief algorithm workflow
+        are available here: https://github.com/yusuf12360/complexity-analysis/blob/main/graphs/hopcroft-karp.md
 */
 
 #include<bits/stdc++.h>
