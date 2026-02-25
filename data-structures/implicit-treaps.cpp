@@ -30,7 +30,8 @@ Complexity Analysis:
 - Note: 
     - The node-recycling pool "del" ensures space complexity stays O(A) regardless of 
       the total number of insertions (B).
-    - The formal proof of the O(log N) expected height is available here: https://github.com/yusuf12360/complexity-analysis/blob/main/data-structures/treap.md
+    - The formal proof of the O(log N) expected height is available here: 
+      https://github.com/yusuf12360/complexity-analysis/blob/main/data-structures/treap.md
 */
 
 #include<bits/stdc++.h>
